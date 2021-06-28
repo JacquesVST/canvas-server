@@ -3,15 +3,14 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
     cors: {
-        origin: 'https://jacquesvst.github.io/',
+        origin: 'https://jacquesvst.github.io',
         transports: ['websocket', 'polling'],
         methods: ["GET", "POST"],
         credentials: true
       },
       allowEIO3: true
 });
-const port = 25565;
-
+const port = 3000;
 
 app.use(express.static(__dirname + '/public'));
 
@@ -24,4 +23,4 @@ function onConnection(socket){
 
 io.on('connection', onConnection);
 
-http.listen(port, () => console.log('listening on port ' + port));
+http.listen(port, () => console.log('Running...'));

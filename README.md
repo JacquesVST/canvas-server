@@ -1,1 +1,1 @@
-# canvas-server
+# Back-end do trabalho de sockets
